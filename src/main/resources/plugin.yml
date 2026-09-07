@@ -32,55 +32,72 @@ permissions:
 commands:
   power:
     description: Manage or view assigned powers.
-    aliases: [powers]
+    aliases: [powers, p]
     permission: powersmp.power
+    usage: /<command> [list|info|set|clear|reload]
   lives:
     description: Check or manage player lives.
     permission: powersmp.lives
+    usage: /<command>
   health:
     description: Manage or view health settings.
     permission: powersmp.admin
+    usage: /<command>
   combat:
     description: Check current combat status.
     permission: powersmp.use
+    usage: /<command>
   spawn:
     description: Teleport to the server spawn.
     permission: powersmp.spawn
+    usage: /<command>
   setspawn:
     description: Set the server spawn location.
     permission: powersmp.admin
+    usage: /<command>
   home:
     description: Teleport to a saved home.
     permission: powersmp.home
+    usage: /<command> [name]
   sethome:
     description: Set a home location.
     permission: powersmp.home
+    usage: /<command> [name]
   delhome:
     description: Delete a saved home.
     permission: powersmp.home
+    usage: /<command> [name]
   homes:
     description: List all saved homes.
     permission: powersmp.home
+    usage: /<command>
   tpa:
     description: Request teleportation to a player.
     permission: powersmp.tpa
+    usage: /<command> <player>
   tpaccept:
     description: Accept an incoming teleport request.
     permission: powersmp.tpa
+    usage: /<command>
   tpdeny:
     description: Deny an incoming teleport request.
     permission: powersmp.tpa
+    usage: /<command>
   balance:
     description: Check current balance.
     aliases: [bal]
     permission: powersmp.use
+    usage: /<command>
   pay:
     description: Send money to another player.
     permission: powersmp.use
+    usage: /<command> <player> <amount>
   baltop:
     description: Display the top economic balances.
     permission: powersmp.use
+    usage: /<command>
   powersmp:
     description: Main administrative command for PowerSMP.
     aliases: [psmp]
     permission: powersmp.admin
+    usage: /<command>

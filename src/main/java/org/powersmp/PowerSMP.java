@@ -14,6 +14,7 @@ import org.powersmp.manager.EconomyManager;
 import org.powersmp.manager.LivesManager;
 import org.powersmp.manager.PowerManager;
 import org.powersmp.manager.TeleportManager;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -61,9 +62,14 @@ public final class PowerSMP extends JavaPlugin {
 
     private void registerCommands() {
         PowerCommand powerCommand = new PowerCommand(this);
-        if (getCommand("power") != null) {
-            getCommand("power").setExecutor(powerCommand);
-            getCommand("power").setTabCompleter(powerCommand);
+        PluginCommand cmd = getCommand("power");
+        
+        if (cmd != null) {
+            cmd.setExecutor(powerCommand);
+            cmd.setTabCompleter(powerCommand);
+            getLogger().info("Successfully registered /power command!");
+        } else {
+            getLogger().severe("FAILED to register /power command! Bukkit could not find 'power' in plugin.yml.");
         }
     }
 

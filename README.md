@@ -16,14 +16,6 @@ PowerSMP introduces customizable elemental powers, a high-stakes life-stealing s
 
 ---
 
-## 📸 Feature Showcase
-
-<p align="center">
-  <img src="assets/powers_demo.png" alt="Powers & Abilities Demo" width="85%">
-</p>
-
----
-
 ## 🌟 Key Features
 
 * **⚡ Elemental Powers & Abilities:** Unique passive buffs and active abilities (Flame, Speed, Tank, Shadow, Lightning) with built-in cooldown management.
@@ -37,10 +29,11 @@ PowerSMP introduces customizable elemental powers, a high-stakes life-stealing s
 
 ## 🛠️ Installation
 
-1. Download the latest `PowerSMP-1.0-SNAPSHOT.jar` from the [Releases](https://github.com/tussle1/PowerSMP/releases) section or compile it yourself.
-2. Place the `.jar` file into your server's `plugins/` directory.
-3. Restart or start your Paper/Spigot server (requires **Java 17+** and **Minecraft 1.20.1**).
-4. Configure settings in `plugins/PowerSMP/config.yml` and `messages.yml`.
+1. Save your banner image as `banner.png` inside an `assets/` folder in your project root.
+2. Download or compile the latest `PowerSMP-1.0-SNAPSHOT.jar`.
+3. Place the `.jar` file into your server's `plugins/` directory.
+4. Restart or start your Paper/Spigot server (requires **Java 17+** and **Minecraft 1.20.1**).
+5. Configure settings in `plugins/PowerSMP/config.yml` and `messages.yml`.
 
 ---
 

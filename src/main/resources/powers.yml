@@ -1,0 +1,63 @@
+flame:
+  name: "&c&lFlame"
+  description:
+    - "&7Control the heat of battle."
+    - "&7Passive: Fire Resistance."
+  icon: FIRE_CHARGE
+  rarity: RARE
+  ability:
+    name: "Fire Burst"
+    cooldown: 20
+    radius: 5.0
+    damage: 4.0
+    fire-seconds: 5
+
+speed:
+  name: "&b&lSpeed"
+  description:
+    - "&7Outpace all your opponents."
+    - "&7Passive: Permanent Speed II."
+  icon: SUGAR
+  rarity: COMMON
+  ability:
+    name: "Dash"
+    cooldown: 10
+    multiplier: 2.5
+
+tank:
+  name: "&a&lTank"
+  description:
+    - "&7Unstoppable frontline force."
+    - "&7Passive: Resistance I."
+  icon: ANVIL
+  rarity: EPIC
+  ability:
+    name: "Ground Slam"
+    cooldown: 25
+    radius: 6.0
+    damage: 6.0
+    knockback: 1.5
+
+shadow:
+  name: "&8&lShadow"
+  description:
+    - "&7Blend seamlessly into darkness."
+    - "&7Passive: Night Vision."
+  icon: OBSIDIAN
+  rarity: LEGENDARY
+  ability:
+    name: "Shadow Step"
+    cooldown: 30
+    duration: 5
+
+lightning:
+  name: "&e&lLightning"
+  description:
+    - "&7Smite enemies from above."
+  icon: LIGHTNING_ROD
+  rarity: MYTHIC
+  ability:
+    name: "Smite"
+    cooldown: 15
+    range: 20.0
+    damage: 5.0

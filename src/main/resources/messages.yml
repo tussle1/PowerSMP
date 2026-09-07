@@ -1,0 +1,33 @@
+prefix: "&8[&ePowerSMP&8] "
+no-permission: "&cYou do not have permission to execute this command."
+player-only: "&cThis command can only be run by a player."
+player-not-found: "&cPlayer not found or offline."
+config-reloaded: "&aConfigurations successfully reloaded."
+
+lives:
+  current: "&7You currently have &e%lives% &7lives."
+  lost-life: "&c%player% died and lost a life! &7(%lives% remaining)"
+  eliminated: "&c%player% has run out of lives and was eliminated!"
+  given: "&aYou set &e%target%'s &alives to &e%lives%&a."
+
+power:
+  assigned: "&aYour power has been set to &e%power%&a!"
+  removed: "&cYour power has been removed."
+  cooldown: "&cAbility %ability% is on cooldown for %cooldown%s."
+  not-owned: "&cYou do not possess a power!"
+
+combat:
+  tagged: "&cYou are in combat! Do not log out for %time% seconds."
+  untagged: "&aYou are no longer in combat."
+  command-blocked: "&cYou cannot use this command while in combat!"
+
+teleport:
+  starting: "&7Teleporting in &e%time% &7seconds. Do not move!"
+  cancelled: "&cTeleport cancelled due to movement."
+  success: "&aTeleported successfully."
+
+economy:
+  balance: "&7Your balance: &a%symbol%%balance%"
+  paid: "&7You paid &a%symbol%%amount% &7to &e%target%."
+  received: "&7You received &a%symbol%%amount% &7from &e%sender%."
+  insufficient-funds: "&cYou do not have enough money!"

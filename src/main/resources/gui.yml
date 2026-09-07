@@ -1,0 +1,13 @@
+gui:
+  powers-title: "&8Select Your Power"
+  size: 27
+  filler-item: GRAY_STAINED_GLASS_PANE
+  power-item-lore:
+    - "%description%"
+    - ""
+    - "&7Rarity: %rarity%"
+    - "&7Status: %status%"
+    - ""
+    - "&eClick to select this power!"
+  status-unlocked: "&aUnlocked"
+  status-locked: "&cLocked"

@@ -1,0 +1,86 @@
+name: PowerSMP
+version: '${project.version}'
+main: com.powersmp.PowerSMP
+api-version: '1.20'
+description: Comprehensive modular core plugin for Power SMP servers.
+author: PowerSMP Team
+softdepend: [PlaceholderAPI]
+
+permissions:
+  powersmp.admin:
+    description: Full administrative access to PowerSMP features.
+    default: op
+  powersmp.use:
+    description: General player usage for PowerSMP commands.
+    default: true
+  powersmp.power:
+    description: Allows interacting with power selection and commands.
+    default: true
+  powersmp.lives:
+    description: Allows checking and interacting with the lives system.
+    default: true
+  powersmp.spawn:
+    description: Allows using /spawn.
+    default: true
+  powersmp.home:
+    description: Allows setting and using homes.
+    default: true
+  powersmp.tpa:
+    description: Allows sending teleport requests.
+    default: true
+
+commands:
+  power:
+    description: Manage or view assigned powers.
+    aliases: [powers]
+    permission: powersmp.power
+  lives:
+    description: Check or manage player lives.
+    permission: powersmp.lives
+  health:
+    description: Manage or view health settings.
+    permission: powersmp.admin
+  combat:
+    description: Check current combat status.
+    permission: powersmp.use
+  spawn:
+    description: Teleport to the server spawn.
+    permission: powersmp.spawn
+  setspawn:
+    description: Set the server spawn location.
+    permission: powersmp.admin
+  home:
+    description: Teleport to a saved home.
+    permission: powersmp.home
+  sethome:
+    description: Set a home location.
+    permission: powersmp.home
+  delhome:
+    description: Delete a saved home.
+    permission: powersmp.home
+  homes:
+    description: List all saved homes.
+    permission: powersmp.home
+  tpa:
+    description: Request teleportation to a player.
+    permission: powersmp.tpa
+  tpaccept:
+    description: Accept an incoming teleport request.
+    permission: powersmp.tpa
+  tpdeny:
+    description: Deny an incoming teleport request.
+    permission: powersmp.tpa
+  balance:
+    description: Check current balance.
+    aliases: [bal]
+    permission: powersmp.use
+  pay:
+    description: Send money to another player.
+    permission: powersmp.use
+  baltop:
+    description: Display the top economic balances.
+    permission: powersmp.use
+  powersmp:
+    description: Main administrative command for PowerSMP.
+    aliases: [psmp]
+    permission: powersmp.admin

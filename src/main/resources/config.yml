@@ -1,0 +1,51 @@
+settings:
+  debug: false
+  storage-type: "SQLITE" # Options: YAML, SQLITE
+
+lives:
+  default-lives: 3
+  max-lives: 10
+  elimination-action: "SPECTATOR" # Options: SPECTATOR, BAN, KICK, COMMAND
+  elimination-command: "tempban %player% 7d Out of lives!"
+
+health:
+  enabled: true
+  starting-health: 20.0
+  max-health: 40.0
+
+combat:
+  duration-seconds: 15
+  block-commands: true
+  blocked-commands:
+    - "/spawn"
+    - "/home"
+    - "/tpa"
+    - "/tpaccept"
+  punish-on-disconnect: true
+
+spawn:
+  teleport-delay: 5
+  cancel-on-move: true
+
+home:
+  default-max-homes: 3
+  teleport-delay: 5
+  cancel-on-move: true
+
+tpa:
+  request-timeout: 60
+  teleport-delay: 5
+  cancel-on-move: true
+
+economy:
+  enabled: true
+  starting-balance: 1000.0
+  currency-symbol: "$"
+
+scoreboard:
+  enabled: true
+  title: "&e&lPOWER SMP"
+
+pvp:
+  enabled: true
+  friendly-fire: true

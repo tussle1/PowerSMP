@@ -1,80 +1,70 @@
 package org.powersmp.power.impl;
 
-import org.powersmp.model.Rarity;
-import org.powersmp.power.Ability;
-import org.powersmp.power.Power;
-import org.bukkit.Material;
+import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.util.Vector;
+import org.powersmp.PowerSMP;
+import org.powersmp.power.Power;
+import org.powersmp.power.PowerType;
 
-import java.util.List;
+public class TankPower extends Power {
 
-public class TankPower implements Power {
-
-    private final Ability ability = new GroundSlamAbility();
-
-    @Override
-    public String getId() { return "tank"; }
-
-    @Override
-    public String getName() { return "&a&lTank"; }
-
-    @Override
-    public List<String> getDescription() {
-        return List.of("&7Immovable fortress.", "&7Passive: Permanent Resistance I.");
+    public TankPower(PowerSMP plugin) {
+        super(plugin, PowerType.TANK, "Tank", 45);
     }
 
     @Override
-    public Material getIcon() { return Material.ANVIL; }
-
-    @Override
-    public Rarity getRarity() { return Rarity.EPIC; }
-
-    @Override
-    public Ability getActiveAbility() { return ability; }
-
-    @Override
-    public void applyPassive(Player player) {
-        player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, PotionEffect.INFINITE_DURATION, 0, false, false));
+    public void applyPassiveEffects(Player player) {
+        // Continuous Resistance I passive
+        player.addPotionEffect(new PotionEffect(
+                PotionEffectType.DAMAGE_RESISTANCE,
+                Integer.MAX_VALUE,
+                0,
+                false,
+                false,
+                true
+        ));
     }
 
     @Override
-    public void removePassive(Player player) {
-        player.removePotionEffect(PotionEffectType.RESISTANCE);
+    public void removePassiveEffects(Player player) {
+        player.removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
     }
 
-    private static class GroundSlamAbility implements Ability {
-        @Override
-        public String getId() { return "ground_slam"; }
+    @Override
+    public boolean executeAbility(Player player) {
+        Location loc = player.getLocation();
 
-        @Override
-        public String getName() { return "Ground Slam"; }
+        // High resistance surge ability
+        player.addPotionEffect(new PotionEffect(
+                PotionEffectType.DAMAGE_RESISTANCE,
+                200, // 10 seconds (200 ticks)
+                2,   // Resistance III
+                false,
+                true,
+                true
+        ));
 
-        @Override
-        public String getDescription() { return "Knocks back and damages nearby enemies."; }
+        // Absorption hearts boost
+        player.addPotionEffect(new PotionEffect(
+                PotionEffectType.ABSORPTION,
+                300, // 15 seconds
+                1,   // Absorption II
+                false,
+                true,
+                true
+        ));
 
-        @Override
-        public int getCooldown() { return 25; }
-
-        @Override
-        public boolean execute(Player player) {
-            player.getWorld().spawnParticle(Particle.EXPLOSION_EMITTER, player.getLocation(), 1);
-            player.getWorld().playSound(player.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 1.0f, 0.8f);
-
-            for (Entity entity : player.getNearbyEntities(6, 4, 6)) {
-                if (entity instanceof LivingEntity target && !entity.equals(player)) {
-                    target.damage(6.0, player);
-                    Vector kb = target.getLocation().toVector().subtract(player.getLocation().toVector()).normalize().multiply(1.5).setY(0.6);
-                    target.setVelocity(kb);
-                }
-            }
-            return true;
+        // Visual and sound effects
+        if (loc.getWorld() != null) {
+            loc.getWorld().spawnParticle(Particle.EXPLOSION, loc, 1);
+            loc.getWorld().playSound(loc, Sound.ENTITY_IRON_GOLEM_ATTACK, 1.0f, 0.5f);
         }
+
+        player.sendMessage("§8[§bPowerSMP§8] §aYou activated §eFortify§a! (Resistance III & Absorption)");
+        return true;
     }
 }

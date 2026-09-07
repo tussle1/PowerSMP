@@ -71,7 +71,7 @@ public class PowerCommand implements CommandExecutor, TabCompleter {
 
     private void handleList(CommandSender sender) {
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lAvailable Powers:"));
-        for (Power power : plugin.getPowerManager().getPowers()) {
+        for (Power power : plugin.getPowerManager().getRegisteredPowers()) {
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', 
                 "&7- &e" + power.getName() + " &8(&7ID: " + power.getId() + "&8)"));
         }
@@ -142,7 +142,7 @@ public class PowerCommand implements CommandExecutor, TabCompleter {
             return;
         }
 
-        plugin.getPowerManager().removePlayerPower(target);
+        plugin.getPowerManager().setPlayerPower(target, null);
         sender.sendMessage(ChatColor.YELLOW + "Cleared " + target.getName() + "'s power.");
         target.sendMessage(ChatColor.YELLOW + "Your power has been cleared.");
     }
@@ -169,7 +169,7 @@ public class PowerCommand implements CommandExecutor, TabCompleter {
 
         if (args.length == 2) {
             if (args[0].equalsIgnoreCase("info") || (args[0].equalsIgnoreCase("set") && sender.hasPermission("powersmp.admin"))) {
-                List<String> powerIds = plugin.getPowerManager().getPowers().stream()
+                List<String> powerIds = plugin.getPowerManager().getRegisteredPowers().stream()
                         .map(Power::getId)
                         .collect(Collectors.toList());
                 return filter(powerIds, args[1]);
@@ -180,7 +180,7 @@ public class PowerCommand implements CommandExecutor, TabCompleter {
         }
 
         if (args.length == 3 && args[0].equalsIgnoreCase("set") && sender.hasPermission("powersmp.admin")) {
-            List<String> powerIds = plugin.getPowerManager().getPowers().stream()
+            List<String> powerIds = plugin.getPowerManager().getRegisteredPowers().stream()
                     .map(Power::getId)
                     .collect(Collectors.toList());
             return filter(powerIds, args[2]);

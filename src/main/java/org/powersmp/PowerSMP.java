@@ -1,5 +1,6 @@
 package org.powersmp;
 
+import org.powersmp.command.PowerCommand;
 import org.powersmp.config.ConfigManager;
 import org.powersmp.config.MessageManager;
 import org.powersmp.listener.AbilityTriggerListener;
@@ -45,6 +46,7 @@ public final class PowerSMP extends JavaPlugin {
         this.teleportManager = new TeleportManager(this);
 
         registerListeners();
+        registerCommands();
 
         getLogger().info("PowerSMP initialized successfully!");
     }
@@ -55,6 +57,14 @@ public final class PowerSMP extends JavaPlugin {
         pm.registerEvents(new AbilityTriggerListener(this), this);
         pm.registerEvents(new CombatListener(this), this);
         pm.registerEvents(new CombatCommandListener(this), this);
+    }
+
+    private void registerCommands() {
+        PowerCommand powerCommand = new PowerCommand(this);
+        if (getCommand("power") != null) {
+            getCommand("power").setExecutor(powerCommand);
+            getCommand("power").setTabCompleter(powerCommand);
+        }
     }
 
     @Override

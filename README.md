@@ -1,7 +1,26 @@
 # ⚡ PowerSMP
 
+<p align="center">
+  <img src="assets/banner.png" alt="PowerSMP Banner" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Minecraft-1.20.1-brightgreen" alt="Minecraft Version">
+  <img src="https://img.shields.io/badge/Java-17%2B-orange" alt="Java Version">
+  <img src="https://img.shields.io/badge/Platform-Paper%2FSpigot-blue" alt="Platform">
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+</p>
+
 A modular, high-performance, production-grade Minecraft SMP plugin built for **Paper / Spigot 1.20.1+**.  
 PowerSMP introduces customizable elemental powers, a high-stakes life-stealing system, combat logging protection, integrated economy, and teleportation systems.
+
+---
+
+## 📸 Feature Showcase
+
+<p align="center">
+  <img src="assets/powers_demo.png" alt="Powers & Abilities Demo" width="85%">
+</p>
 
 ---
 

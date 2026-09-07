@@ -1,6 +1,6 @@
 name: PowerSMP
 version: '${project.version}'
-main: com.powersmp.PowerSMP
+main: org.powersmp.PowerSMP
 api-version: '1.20'
 description: Comprehensive modular core plugin for Power SMP servers.
 author: PowerSMP Team
